@@ -1,17 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
-    const nav = document.querySelector('nav');
 
-    nav.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-            e.preventDefault();
-            const url = e.target.href;
-            navigateTo(url);
-        }
-    });
-
-    content.addEventListener('click', (e) => {
-        if (e.target.classList.contains('read-more') || e.target.classList.contains('back-link')) {
+    document.body.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' && (e.target.classList.contains('read-more') || e.target.classList.contains('back-link') || e.target.closest('.blog-name'))) {
             e.preventDefault();
             const url = e.target.href;
             navigateTo(url);
