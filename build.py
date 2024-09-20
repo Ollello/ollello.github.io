@@ -10,6 +10,10 @@ if not os.path.exists('build'):
 # Copy static files to the build directory
 shutil.copytree('static', 'build/static', dirs_exist_ok=True)
 
+# Create .nojekyll file
+with open('build/.nojekyll', 'w') as f:
+    pass
+
 # Initialize Frozen-Flask
 freezer = Freezer(app)
 
