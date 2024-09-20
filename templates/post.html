@@ -10,5 +10,5 @@
             {{ post.content|safe }}
         </div>
     </article>
-    <a href="/" class="back-link">Back to Home</a>
+    <a href="{{ url_for('index') }}" class="back-link">Back to Home</a>
 {% endblock %}

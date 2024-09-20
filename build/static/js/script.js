@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
 
     document.body.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A' && (e.target.classList.contains('read-more') || e.target.classList.contains('back-link') || e.target.closest('.blog-name'))) {
+        if (e.target.tagName === 'A' && (e.target.classList.contains('read-more') || e.target.classList.contains('back-link') || e.target.closest('.blog-name') || e.target.href.endsWith('.html'))) {
             e.preventDefault();
             const url = e.target.href;
             navigateTo(url);

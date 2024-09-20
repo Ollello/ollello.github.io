@@ -6,12 +6,12 @@
     <div class="post-list">
         {% for post in posts %}
             <article class="post-summary">
-                <h2><a href="{{ url_for('post', slug=post.slug) }}">{{ post.title }}</a></h2>
+                <h2><a href="{{ url_for('post', slug=post.slug) }}.html">{{ post.title }}</a></h2>
                 <p class="post-date">{{ post.date }}</p>
                 <div class="post-excerpt">
                     {{ post.content|safe|truncate(150) }}
                 </div>
-                <a href="{{ url_for('post', slug=post.slug) }}" class="read-more">Read more</a>
+                <a href="{{ url_for('post', slug=post.slug) }}.html" class="read-more">Read more</a>
             </article>
         {% endfor %}
     </div>

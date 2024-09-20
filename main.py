@@ -22,7 +22,7 @@ def index():
     posts.sort(key=lambda x: x['date'], reverse=True)
     return render_template('index.html', posts=posts)
 
-@app.route('/post/<slug>')
+@app.route('/post/<slug>.html')
 def post(slug):
     with open(os.path.join('content', f'{slug}.md'), 'r') as f:
         content = f.read()
