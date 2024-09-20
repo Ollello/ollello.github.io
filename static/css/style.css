@@ -13,7 +13,7 @@ body {
 
 header {
     color: #333;
-    padding: 1rem;
+    padding: 2rem;
     border-bottom: 1px solid #ddd;
 }
 
@@ -89,6 +89,7 @@ h1, h2 {
 .back-link {
     display: inline-block;
     margin-top: 1rem;
+    padding: 2rem;
     color: #007bff;
     text-decoration: none;
     font-size: 0.9rem;
