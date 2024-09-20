@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - uses: actions/checkout@v2
 
@@ -26,10 +28,27 @@ jobs:
         poetry install
 
     - name: Build static site
-      run: poetry run python build.py
+      run: |
+        poetry run python build.py
+        echo "Build completed. Contents of build directory:"
+        ls -R build
+
+    - name: Create .nojekyll file
+      run: touch build/.nojekyll
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
+
+    - name: Debug information
+      if: failure()
+      run: |
+        echo "Workflow failed. Debugging information:"
+        echo "Python version:"
+        python --version
+        echo "Poetry version:"
+        poetry --version
+        echo "Contents of current directory:"
+        ls -R
