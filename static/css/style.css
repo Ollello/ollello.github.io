@@ -1,15 +1,19 @@
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    line-height: 1.6;
+    line-height: 1.4;
     color: #333;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 header {
     color: #333;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     border-bottom: 1px solid #ddd;
 }
 
@@ -23,80 +27,76 @@ header {
 
 .blog-name {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
 nav a {
     color: #007bff;
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+    overflow-y: auto;
+    padding: 1rem;
 }
 
 h1, h2 {
     color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .post-list {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .post-summary {
     background-color: #fff;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .post-date {
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .read-more {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     color: #007bff;
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .post {
     background-color: #fff;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .back-link {
     display: inline-block;
-    margin-top: 2rem;
+    margin-top: 1rem;
     color: #007bff;
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 footer {
     color: #333;
     text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 2rem;
+    padding: 1rem;
     border-top: 1px solid #ddd;
+    font-size: 0.8rem;
 }
 
 @media (max-width: 600px) {
-    main {
-        padding: 1rem;
-    }
-
-    .post-summary, .post {
-        padding: 1rem;
-    }
-
     .header-content {
         flex-direction: column;
         align-items: flex-start;
@@ -105,4 +105,12 @@ footer {
     nav {
         margin-top: 0.5rem;
     }
+}
+
+#content {
+    transition: opacity 0.3s ease;
+}
+
+.loading {
+    opacity: 0.5;
 }

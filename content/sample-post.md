@@ -1,15 +1,15 @@
 ---
-title: Welcome to My Personal Blog
+title: My First Blog Post
 date: 2023-05-01
 ---
 
-# Welcome to My Personal Blog
+# Hello, World!
 
-Hello and welcome to my personal blog! This is a sample post to demonstrate the layout and styling of the blog.
+This is my first blog post on my personal blog. I'm excited to share my thoughts and experiences with you all.
 
 ## About Me
 
-I'm a passionate developer who loves to write about technology, programming, and personal experiences. This blog is a platform for me to share my thoughts and ideas with the world.
+I'm a passionate developer who loves to write about technology, programming, and personal experiences. This blog is a platform for me to share my ideas with the world.
 
 ## What to Expect
 

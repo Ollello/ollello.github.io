@@ -3,14 +3,13 @@
 {% block title %}My Personal Blog - Home{% endblock %}
 
 {% block content %}
-    <h1>Welcome to My Personal Blog</h1>
     <div class="post-list">
         {% for post in posts %}
             <article class="post-summary">
                 <h2><a href="{{ url_for('post', slug=post.slug) }}">{{ post.title }}</a></h2>
                 <p class="post-date">{{ post.date }}</p>
                 <div class="post-excerpt">
-                    {{ post.content|safe|truncate(200) }}
+                    {{ post.content|safe|truncate(150) }}
                 </div>
                 <a href="{{ url_for('post', slug=post.slug) }}" class="read-more">Read more</a>
             </article>
